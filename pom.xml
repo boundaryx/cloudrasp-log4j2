@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>boundaryx</groupId>
+    <artifactId>rasp-log4j2</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1</version>
+    <modules>
+        <module>rasp-loader</module>
+        <module>rasp-core</module>
+    </modules>
+
+    <properties>
+        <shade-prefix>cn.boundaryx.rasp.third</shade-prefix>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <javassist.version>3.28.0-GA</javassist.version>
+        <maven.compiler.version>3.8.0</maven.compiler.version>
+        <maven.jar.plugin>2.4</maven.jar.plugin>
+        <maven.shade.plugin>3.1.0</maven.shade.plugin>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

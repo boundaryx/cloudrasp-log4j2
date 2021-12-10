@@ -1,0 +1,7 @@
+cn/boundaryx/rasp/analyzer/JndiAnalyzer.class
+cn/boundaryx/rasp/RASPLauncher.class
+cn/boundaryx/rasp/utils/BytecodeUtils.class
+cn/boundaryx/rasp/exception/RASPSecurityException.class
+cn/boundaryx/rasp/ClassTransformer.class
+cn/boundaryx/rasp/hooks/JndiHook.class
+cn/boundaryx/rasp/utils/StackTrace.class

@@ -1,0 +1,5 @@
+cn/boundaryx/rasp/RASPJvm.class
+cn/boundaryx/rasp/EntryPoint.class
+cn/boundaryx/rasp/RASPLoader.class
+cn/boundaryx/rasp/Agent.class
+cn/boundaryx/rasp/RASPVMLoader.class
