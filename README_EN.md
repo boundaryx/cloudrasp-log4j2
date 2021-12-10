@@ -2,6 +2,11 @@
 
 [简体中文](README.md)
 
+*This project is a local version from CloudArmor specifically built for defending
+Log4j2 CVE-2021-44228 . No network connection is required to run this project.*
+
+**Please DO TESTING before deploying it to production environment.**
+
 The application self-defense module uses RASP technology to inject probes into Java applications. The detection of log4j2 is achieved by detecting the execution context, which can also provide protection for non-Web business programs.
 
 The defense module will block JNDI injection initiated through log4j2 by default. 
