@@ -1,44 +1,46 @@
-# 靖云甲·应用程序自我防护模块 - Log4j2 专版
+# CloudArmor · Runtime Application Self-Protection Module - Log4j2 Version
 
-[English](README_EN.md)
+[简体中文](README_ZH.md)
 
-*本项目为靖云甲为 Log4j2 CVE-2021-44228 专项构建的本地版本。使用不需要联网。*
+*This project is a local version from CloudArmor specifically built for defending
+Log4j2 CVE-2021-44228 . No network connection is required to run this project.*
 
-**请务必测试后再应用于生产环境！**
+**Please DO TESTING before deploying it to production environment.**
 
-应用程序自我防护模块通过 RASP 技术，将探针注入至 Java 应用中。对 log4j2 的攻击检测是通过检测程序上下文来实现的，也可为非 Web 业务程序提供保护。
+The application self-defense module uses RASP technology to inject probes into Java applications. The detection of log4j2 is achieved by detecting the execution context, which can also provide protection for non-Web business programs.
 
-该防御模块会默认阻断通过 log4j2 发起的 JNDI 注入。
+The defense module will block JNDI injection initiated through log4j2 by default. 
 
-值得注意的是 虽然 Oracle 在 6u211、7u201、8u191、11.0.1 默认不再通过 JNDI 加载远程 class，但是攻击人员发现通过 tomcat-el 等第三方组件还是能完成远程命令执行操作。 
+It is worth noting that although Oracle no longer loads remote classes through JNDI by default in 6u211, 7u201, 8u191, and 11.0.1, attackers have discovered that remote command execution can still be accomplished through third-party components such as tomcat-el. 
+
+## Installation
+
+This project includes two JAR packages, ```rasp-loader.jar``` and ```rasp-core.jar```, which have been compiled to dist.
+
+The self-defense module supports normal and restart-free installation. 
+
+### Normal installation
+
+Append ```-javaagent:rasp-loader.jar``` to Java program startup script argument list
+
+Example: for SpringBoot applications, modify the argument list to append ```java -javaagent:rasp-loader.jar -jar springboot.jar ```
 
 
-## 安装方式
+### Restart-free installation
 
-该项目包括两个 JAR 包，```rasp-loader.jar``` 与 ```rasp-core.jar```，已经编译至 ```dist``` 中
-
-其中防护模块的安装支持重启和不重启安装。
-
-### 重启安装
-
-在 Java 程序启动启动脚本添加参数 ```-javaagent:rasp-loader.jar```
-
-以 SpringBoot 程序为例，修改启动参数为 ```java -javaagent:rasp-loader.jar -jar springboot.jar ```
-
-### 不重启安装
-
-执行 ```java -jar rasp-loader.jar``` 然后根据提示注入特定的 JVM 进程
+Execute ```java -jar rasp-loader.jar```, and follow the prompts to inject into specific JVM processes 
 
 ![img.png](img/1.png)
 
-## 阻断测试
+## Interception test
 
 ![img.png](img/2.png)
 
-## 源码编译
+## Compile from source
 
-执行 ```build.sh``` 即可
+Run ```build.sh```
 
-## 版本兼容
+## Compatibility
 
-支持 JDK 6-16 版本
+Support JDK from version 6 to 16 
+
